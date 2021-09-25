@@ -1,0 +1,5 @@
+<!-- insert_after '#new_variant' -->
+
+<%= button_link_to(Spree.t(:generate_variants), 
+    spree.variant_generator_form_admin_product_url(@product), 
+    { icon: 'add.svg', class: 'btn-success', id: 'new_var_link' }) %>
