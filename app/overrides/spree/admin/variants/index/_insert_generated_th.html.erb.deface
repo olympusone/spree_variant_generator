@@ -1,0 +1,5 @@
+<!-- insert_before '[data-hook="variants_header"] .actions' -->
+
+<th class='text-center'>
+    <%= t('activerecord.attributes.spree/variant.generated') %>
+</th>

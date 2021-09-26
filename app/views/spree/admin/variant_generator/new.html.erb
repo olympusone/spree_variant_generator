@@ -1,12 +1,21 @@
 <%= render partial: 'spree/admin/shared/product_tabs', locals: {current: :variants} %>
 
-<%= form_for [:admin, @product] do |f| %>
+<% content_for :page_actions do %>
+  <%= button_link_to Spree.t(:back_to_variants), admin_product_variants_url(@product), { class: "btn btn-outline-secondary", icon: 'arrow-left.svg' } %>
+<% end if can?(:create, Spree::Variant) %>
+
+<%= form_for :variant, url: variants_generate_admin_product_url(@product) do |f| %>
   <div class="card mb-3 bg-light">
     <div class="card-body">
       <fieldset data-hook="admin_variant_new_form">
-        <legend class="border-bottom"><%= Spree.t(:new_variant) %></legend>
-        <%= render partial: 'form', locals: { f: f } %>
-        <%= render partial: 'spree/admin/shared/new_resource_links' %>
+        <legend class="border-bottom"><%= Spree.t(:generate_variants_form) %></legend>
+        <%= render partial: 'form', locals: { f: f } %> 
+
+        <div class="form-actions" data-hook="buttons">
+          <%= button Spree.t('actions.create'), 'save.svg', 'submit', {class: 'btn-success', data: { disable_with: "#{ Spree.t(:saving) }..." }} %>
+          <span class="or"><%= Spree.t(:or) %></span>
+          <%= button_link_to Spree.t('actions.cancel'), admin_product_variants_url(@product), icon: 'cancel.svg' %>
+        </div>
       </fieldset>
     </div>
   </div>

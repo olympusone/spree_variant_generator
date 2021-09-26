@@ -9,6 +9,10 @@ module SpreeVariantGenerator
       g.test_framework :rspec
     end
 
+    config.after_initialize do
+      Spree::PermittedAttributes.variant_attributes << :generated
+    end
+
     initializer 'spree_variant_generator.environment', before: :load_config_initializers do |_app|
       SpreeVariantGenerator::Config = SpreeVariantGenerator::Configuration.new
     end

@@ -1,2 +1,10 @@
 en:
-  
+  spree:
+    generate_variants: Create Multiple Variants
+    generate_variants_form: Create Multiple Variants Form
+  errors:
+    variant_generator:
+      empty_option_value_ids: "You must select at lest one option from the %{option_types}"
+  variant_generator:
+    form:
+      success: The records was successfully created

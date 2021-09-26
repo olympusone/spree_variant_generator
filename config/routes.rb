@@ -3,6 +3,7 @@ Spree::Core::Engine.add_routes do
     resources :products do
       member do
         get '/variant_generator_form', to: 'variant_generator#new'
+        post '/variants_generate', to: 'variant_generator#create'
       end
     end
   end

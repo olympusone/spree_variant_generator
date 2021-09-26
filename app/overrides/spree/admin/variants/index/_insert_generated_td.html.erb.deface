@@ -1,0 +1,5 @@
+<!-- insert_before 'table tbody .actions' -->
+
+<td class='text-center'>
+    <%= Spree.t(:say_yes) if variant.generated? %>
+</td>

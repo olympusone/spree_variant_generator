@@ -1,3 +1,15 @@
 el:
   spree:
     generate_variants: Δημιουργία Πολλαπλών Παραλλαγών
+    generate_variants_form: Φόρμα Δημιουργίας Πολλαπλών Παραλλαγών
+    back_to_variants: Πίσω στις Παραλλαγές
+  errors:
+    variant_generator:
+      empty_option_value_ids: "Πρέπει επιλέξετε έστω μια τιμή απο τα %{option_types}"
+  variant_generator:
+    form:
+      success: Η δημιουργία των εγγραφών ήταν επιτυχής
+  activerecord:
+    attributes:
+      spree/variant:
+        generated: Πολλ.Δημιουργία
