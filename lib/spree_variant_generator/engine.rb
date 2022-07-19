@@ -13,9 +13,9 @@ module SpreeVariantGenerator
       Spree::PermittedAttributes.variant_attributes << :generated
     end
 
-    # initializer 'spree_variant_generator.environment', before: :load_config_initializers do |_app|
-    #   SpreeVariantGenerator::Config = SpreeVariantGenerator::Configuration.new
-    # end
+    initializer 'spree_variant_generator.environment', before: :load_config_initializers do |_app|
+      SpreeVariantGenerator::Config = SpreeVariantGenerator::Configuration.new
+    end
 
     def self.activate
       Dir.glob(File.join(File.dirname(__FILE__), '../../app/**/*_decorator*.rb')) do |c|

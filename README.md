@@ -1,5 +1,7 @@
 # SpreeVariantGenerator
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/cf0faa994f517e1ca8d0/maintainability)](https://codeclimate.com/github/olympusone/spree_variant_generator/maintainability)
+
 You can create multiple variants at once with variant generator form.
 
 ## Installation
